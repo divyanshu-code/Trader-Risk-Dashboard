@@ -107,7 +107,11 @@ export default function DashboardPage() {
             />
           </div>
 
-          <div className="col-span-1 md:col-span-2 lg:col-span-3 h-full">
+          <div className="col-span-1 md:col-span-2 lg:col-span-2 h-full flex flex-col">
+            <EquityCurve startingBalance={startingBalance} trades={trades} />
+          </div>
+
+          <div className="col-span-1 md:col-span-2 lg:col-span-1 h-full flex flex-col">
             <RiskAnalysis 
               currentDrawdown={formatCurrency(currentDrawdown)}
               remainingDrawdown={formatCurrency(remainingDrawdown)}
@@ -118,10 +122,6 @@ export default function DashboardPage() {
               riskStatus={risk.status}
               warningMessage={risk.statusMessage}
             />
-          </div>
-
-          <div className="col-span-1 md:col-span-2 lg:col-span-3 h-full">
-            <EquityCurve startingBalance={startingBalance} trades={trades} />
           </div>
 
           <div className="col-span-1 md:col-span-2 lg:col-span-3">
